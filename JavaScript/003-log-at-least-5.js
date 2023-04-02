@@ -4,7 +4,7 @@ const logAtLeast5 = (n) => {
     console.log(i);
   }
 };
-logAtLeast5(6);
+logAtLeast5(3);
 
 // * O(1) constant runtime
 const logAtMost5 = (n) => {
@@ -12,4 +12,5 @@ const logAtMost5 = (n) => {
     console.log(i);
   }
 };
-logAtMost5(2);
+logAtMost5(6);
+// logAtMost5(0);
