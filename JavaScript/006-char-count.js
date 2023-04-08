@@ -37,7 +37,7 @@ function charCount2(str) {
 console.log(charCount2("My name is sandy 1233"));
 
 //* version: 3
-function charCount23(str) {
+function charCount3(str) {
   // make object to return at the end
   const result = {};
   // loop over string, for each char
@@ -49,7 +49,7 @@ function charCount23(str) {
   }
   return result;
 }
-console.log(charCount23("My name is sandy"));
+console.log(charCount3("My name is sandy"));
 
 /* ---- Example solution ----- */
 let a = 1;
@@ -62,3 +62,32 @@ console.log(a);
 
 // Returns the Unicode value of the character at the specified location.
 console.log("love".charCodeAt(1));
+
+/* ---------- End ----------- */
+
+// version: 4
+function charCount4(str) {
+  // make object to return at the end
+  const result = {};
+  // loop over string, for each char
+  for (let char of str) {
+    if (isAlphaNumeric(char)) {
+      char = char.toLowerCase();
+      result[char] = ++result[char] || 1;
+    }
+  }
+  return result;
+}
+console.log(charCount4("My name is sandy 32100!."));
+
+function isAlphaNumeric(char) {
+  const code = char.charCodeAt(0);
+  if (
+    !(code > 47 && code < 58) && // Numeric (0-9)
+    !(code > 64 && code < 91) && // Upper Alpha (A-Z)
+    !(code > 96 && code < 123) // lower alpha (a-z)
+  ) {
+    return false;
+  }
+  return true;
+}
